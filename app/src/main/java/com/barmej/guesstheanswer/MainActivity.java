@@ -80,4 +80,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
+    public void onShareQuestionClicked(View view) {
+        Intent intent = new Intent(MainActivity.this, ShareActivity.class);
+        intent.putExtra("question text extra", mCurrentQuestion);
+        startActivity(intent);
+    }
 }
