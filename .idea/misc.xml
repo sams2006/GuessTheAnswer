@@ -4,14 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/button_false.xml" value="0.3935" />
+        <entry key="app/src/main/res/drawable/button_purple.xml" value="0.3935" />
         <entry key="app/src/main/res/drawable/button_true.xml" value="0.3935" />
         <entry key="app/src/main/res/drawable/half_eclipse.xml" value="0.3935" />
         <entry key="app/src/main/res/drawable/pressed_false.xml" value="0.3935" />
+        <entry key="app/src/main/res/drawable/pressed_purple.xml" value="0.3935" />
         <entry key="app/src/main/res/drawable/pressed_true.xml" value="0.3935" />
         <entry key="app/src/main/res/drawable/rectangle_rounded_corners.xml" value="0.3935" />
         <entry key="app/src/main/res/drawable/rounded_rectangle.xml" value="0.3935" />
         <entry key="app/src/main/res/drawable/unpressed_false.xml" value="0.3935" />
+        <entry key="app/src/main/res/drawable/unpressed_purple.xml" value="0.3935" />
         <entry key="app/src/main/res/drawable/unpressed_true.xml" value="0.3935" />
+        <entry key="app/src/main/res/layout/activity_answer.xml" value="0.5076992753623188" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.501358695652174" />
       </map>
     </option>

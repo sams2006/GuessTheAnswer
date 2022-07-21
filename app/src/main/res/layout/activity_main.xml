@@ -39,6 +39,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="onChangeQuestionClicked"
             android:background="@color/transWhite"
             app:srcCompat="@drawable/ic_purple_refresh_24" />
 
@@ -90,13 +91,15 @@
         android:layout_marginBottom="32dp"
         android:background="@drawable/button_true"
         android:text="صحيح"
+        android:onClick="onTrueClicked"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_false"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button_false" />
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button_false"
@@ -107,10 +110,11 @@
         android:layout_marginBottom="32dp"
         android:background="@drawable/button_false"
         android:text="خطأ"
+        android:onClick="onFalseClicked"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_true"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/button_true" />
 </androidx.constraintlayout.widget.ConstraintLayout>
