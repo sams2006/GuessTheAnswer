@@ -3,6 +3,7 @@ package com.barmej.guesstheanswer;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -18,6 +19,10 @@ public class ShareActivity extends AppCompatActivity {
         setContentView(R.layout.activity_share);
         mEditTextShareTitle = findViewById(R.id.edit_text_share_title);
         mQuestionText = getIntent().getStringExtra("question text extra");
+
+        SharedPreferences sharedPreferences = getSharedPreferences("app pre", MODE_PRIVATE);
+        String questionTitle = sharedPreferences.getString("share title", "");
+        mEditTextShareTitle.setText(questionTitle);
     }
 
     public void onShareQuestionClicked(View view) {
@@ -28,6 +33,11 @@ public class ShareActivity extends AppCompatActivity {
         shareIntent.putExtra(Intent.EXTRA_TEXT, questionTitle + "\n" + mQuestionText);
         shareIntent.setType("text/plain");
         startActivity(shareIntent);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("app pre", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("share title", questionTitle);
+        editor.apply();
 
     }
 }
