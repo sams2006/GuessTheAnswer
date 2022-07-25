@@ -12,24 +12,24 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String[] QUESTIONS = {
-            "العملة الرسمية لدولة الكويت هي الريال الكويتي ؟",
-            "توبقال هي أعلى قمة جبلية في الوطن العربي ؟",
-            "الجزائر هي أكبر دولة عربية من حيث المساحة ؟",
-            "الدار البيضاء هي عاصمة المغرب ؟"
-    };
     private static final boolean[] ANSWERS = {
             false,
             true,
             true,
-            false
+            false,
+            true,
+            false,
+            true,
+            true,
+            false,
+            true,
+            false,
+            false,
+            true
     };
-    private static final String[] ANSWERS_DETAILS = {
-            "العملة الرسمية لدولة الكويت هي الدينار الكويتي ",
-            "توبقال هي أعلى قمة جبلية في الوطن العربي",
-            "الجزائر هي أكبر دولة عربية من حيث المساحة ",
-            "الرباط هي عاصمة المغرب "
-    };
+    private String[] QUESTIONS;
+    private String[] ANSWERS_DETAILS;
+
     TextView mTextViewQuestion;
     private String mCurrentQuestion, mCurrentAnswerDetails;
     private boolean mCurrentAnswer;
@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        QUESTIONS = getResources().getStringArray(R.array.questions);
+        ANSWERS_DETAILS = getResources().getStringArray(R.array.answers_details);
 
         mTextViewQuestion = findViewById(R.id.text_view_question);
         showNewQuestion();
@@ -59,10 +62,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void onTrueClicked(View view) {
         if (mCurrentAnswer == true) {
-            Toast.makeText(this, "إجابة صحيحة", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.true_text), Toast.LENGTH_SHORT).show();
             showNewQuestion();
         } else {
-            Toast.makeText(this, "إجابة خاطئة", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.false_text), Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, AnswerActivity.class);
             intent.putExtra("question_answer", mCurrentAnswerDetails);
             startActivity(intent);
@@ -71,10 +74,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void onFalseClicked(View view) {
         if (mCurrentAnswer == false) {
-            Toast.makeText(this, "إجابة صحيحة", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.true_text), Toast.LENGTH_SHORT).show();
             showNewQuestion();
         } else {
-            Toast.makeText(this, "إجابة خاطئة", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.false_text), Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, AnswerActivity.class);
             intent.putExtra("question_answer", mCurrentAnswerDetails);
             startActivity(intent);
