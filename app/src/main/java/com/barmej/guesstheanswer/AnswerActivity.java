@@ -19,7 +19,7 @@ public class AnswerActivity extends AppCompatActivity {
 
         mTextViewAnswer = findViewById(R.id.text_view_answer);
 
-        String answer = getIntent().getStringExtra("question_answer");
+        String answer = getIntent().getStringExtra(Constants.QUESTION_ANSWER);
         if (answer != null) {
             mTextViewAnswer.setText(answer);
         }
